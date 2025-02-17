@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import Sidebar from '../sidebar';
 import Header from '../header';
-import * as Widgets from '../widgets';
+import { widgets } from '../widgets';
 import './layout.scss';
 
-{
-  /* <Link
-to={`/widgets/${name.toLowerCase()}`}
-
->
-{name} 
-</Link>*/
-}
-
 const Layout: React.FC = () => {
-  const [selectedWidget, setSelectedWidget] = useState<string | null>(null);
-  const widgets = Object.keys(Widgets);
-  const widgetNames = widgets.map((widget) => widget.replace('Widget', ''));
+  const [selectedWidgetId, setSelectedWidgetId] = useState<string | null>(null);
 
-  console.log(selectedWidget);
+  const SelectedWidgetComponent = widgets.find(
+    (widget) => widget.id === selectedWidgetId
+  )?.component;
+
   return (
     <div className='layout'>
-      <Sidebar listItems={widgetNames} setItem={setSelectedWidget} />
+      <Sidebar
+        listItems={widgets.map((widget) => ({
+          id: widget.id,
+          name: widget.name,
+        }))}
+        setItem={setSelectedWidgetId}
+      />
       <Header />
-      <div className='main'>Main</div>
+      <div className='main'>
+        {SelectedWidgetComponent && <SelectedWidgetComponent />}
+      </div>
     </div>
   );
 };

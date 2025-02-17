@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ClickableListItem from './ClickableListItem';
 import './sidebar.scss';
 
 interface SidebarProps {
-  listItems: string[];
+  listItems: {
+    id: string;
+    name: string;
+  }[];
   setItem: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ listItems, setItem }) => {
-  const handleItemClick = (item: string) => {
-    setItem(item);
+  const handleItemClick = (itemId: string) => {
+    setItem(itemId);
   };
 
   return (
@@ -18,8 +21,9 @@ const Sidebar: React.FC<SidebarProps> = ({ listItems, setItem }) => {
       <ul className='sidebar__list'>
         {listItems.map((item) => (
           <ClickableListItem
-            key={item}
-            title={item}
+            key={item.id}
+            id={item.id}
+            title={item.name}
             onClick={handleItemClick}
           />
         ))}
