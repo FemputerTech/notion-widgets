@@ -1,0 +1,8 @@
+// Main entry point for Sass, import everything here
+
+// Import variables first (e.g., colors, typography, etc)
+@use './variables' as var;
+@use './mixins';
+
+// Import global styles (e.g., resets, body styles)
+@use './global';
