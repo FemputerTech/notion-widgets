@@ -6,7 +6,7 @@
   "homepage": "http://femputertech.github.io/notion-widgets",
   "scripts": {
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
