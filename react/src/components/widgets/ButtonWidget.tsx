@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ButtonWidget: React.FC = () => {
-  return <div>ButtonWidget</div>;
+  return <button type='button'>Button</button>;
 };
 
 export default ButtonWidget;
