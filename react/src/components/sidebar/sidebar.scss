@@ -1,0 +1,21 @@
+.sidebar {
+  background-color: lightgray;
+  grid-column: 1;
+  grid-row: 1/-1;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+.clickable-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 0 8px;
+}

@@ -7,9 +7,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/button-widget' element={<ButtonWidget />} />
-        <Route path='/window-widget' element={<WindowWidget />} />
         <Route path='/' element={<Layout />} />
+        <Route path='widgets/button' element={<ButtonWidget />} />
+        <Route path='widgets/window' element={<WindowWidget />} />
       </Routes>
     </Router>
   );
