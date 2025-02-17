@@ -5,6 +5,7 @@
   "type": "module",
   "homepage": "http://femputertech.github.io/notion-widgets",
   "scripts": {
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
